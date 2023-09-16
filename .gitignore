@@ -1,0 +1,3 @@
+/tensorflow/pose_estimation_tensorflow_.py
+# Ignore the test.py file
+/tensorflow/test.py
