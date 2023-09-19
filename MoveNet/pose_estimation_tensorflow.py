@@ -113,6 +113,10 @@ class PoseEstimation:
         while cap.isOpened():
             ret, frame = cap.read()
             
+            # if frame is read correctly success is True
+            if not ret:
+                print("Frame not found!!")
+                break
             # Reshape image
             img = frame.copy()
             img = tf.image.resize_with_pad(np.expand_dims(img, axis=0), input_size,input_size)
@@ -172,8 +176,6 @@ if __name__ == "__main__":
                         help="Model to use : 'movenet_lightning' or 'movenet_thunder'")
     parser.add_argument('-i', '--input', type=str, default='camera',
                         help="path to video/image file to use as input")
-    parser.add_argument("-o","--output",
-                        help="Path to output video file")
     parser.add_argument("-s", "--confidence_threshold", default=0.2, type=float,
                         help="Minimum confidence score for a keypoint to be visualized")
 
