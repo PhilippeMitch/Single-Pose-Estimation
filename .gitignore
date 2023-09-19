@@ -1,3 +1,2 @@
 /MoveNet/pose_estimation_tensorflow_.py
-# Ignore the test.py file
-/MoveNet/test.py
+/test.py
